@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mon-pod
+spec:
+  containers:
+    - name: mon-container
+      image: mon-image:v1
+      ports:
+        - containerPort: 8080

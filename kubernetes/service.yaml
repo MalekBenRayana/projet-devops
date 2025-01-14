@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mon-service
+spec:
+  selector:
+    app: mon-app  # Devrait correspondre à l'étiquette de ton déploiement
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080  # Le port du container
+  type: LoadBalancer  # Pour exposer le service à l'extérieur (si supporté par ton cloud)
